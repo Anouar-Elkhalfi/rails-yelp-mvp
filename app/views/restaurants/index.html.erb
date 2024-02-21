@@ -1,0 +1,12 @@
+<div class="container" style="margin-top: 20px; margin-bottom: 20px; padding: 20px;">
+  <h1>Welcome to Anouar's restaurants </h1>
+  <% @restaurants.each do |restaurant| %>
+    <%= simple_form_for(restaurant) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category %>
+      <%= f.button :submit, class: "btn btn-primary btn-hover" %>
+    <% end %>
+  <% end %>
+</div>

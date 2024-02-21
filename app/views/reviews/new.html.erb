@@ -1,0 +1,8 @@
+<div class="container" style="padding: 20px; margin-top: 20px; margin-bottom: 20px;">
+  <h1>Add a New Review</h1>
+  <%= simple_form_for([@restaurant, @review]) do |f| %>
+    <%= f.input :rating %>
+    <%= f.input :content %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
