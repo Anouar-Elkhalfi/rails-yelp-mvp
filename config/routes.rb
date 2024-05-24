@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  #- Route: GET "/restaurants"
+  # Set the root path to the index action of the restaurants controller
+  root "restaurants#index"
+
+  # Resources for restaurants with nested resources for reviews
   resources :restaurants, only: [:index, :show, :new, :create, :edit, :update] do
     resources :reviews, only: [:new, :create]
   end
-  get "up" => "rails/health#show", as: :rails_health_check
+
+  # Health check route
+  get "up", to: "rails/health#show", as: :rails_health_check
 end
 
 # User Stories
