@@ -1,11 +1,14 @@
-<div class="container" style="margin-top: 20px; margin-bottom: 20px; padding: 20px;">
-  <h1>Here you can create your restaurant </h1>
-  <%= simple_form_for(@restaurant) do |f| %>
-    <%= f.input :name, placeholder: "Name" %>
-    <%= f.input :address, placeholder: "Address" %>
-    <%= f.input :phone_number, placeholder: "Phone Number" %>
-    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], include_blank: false, placeholder: "Category" %>
-    <%= f.button :submit, "Créer", class: "btn btn-primary" %>
-  <% end %>
-  <%= link_to 'Back to Restaurants List', restaurants_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Create a new restaurant</h1>
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.input :category, collection: Restaurant::CATEGORIES %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
