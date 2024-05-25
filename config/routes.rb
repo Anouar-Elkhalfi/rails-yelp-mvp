@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :restaurants
+      resources :reviews
+
+      root to: "restaurants#index"
+    end
   root to: "restaurants#index"
   resources :restaurants, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:create]
